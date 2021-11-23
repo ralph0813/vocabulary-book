@@ -1,9 +1,8 @@
 import * as React from 'react'
+import MainPage from './pages/MainPage'
 
 const App = (): JSX.Element => (
-  <div className="h-96 w-full bg-gray-300 text-blue-800">
-    Hello TS!
-  </div>
+  <MainPage />
 )
 
 export default App
