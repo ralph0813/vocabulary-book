@@ -29,19 +29,20 @@ const WfdItem = (props: { item: SentenceInfo, dispatchDelSentence: (id: string) 
   const isPracticedToday = item.practicedDate[item.practicedDate.length - 1] === new Date().toLocaleDateString()
 
   return (
-    <div className={`text-2xl ${isPracticedToday ? 'text-gray-400' : 'text-gray-800'}`}>
+    <div className={`md:text-lg lg:text-2xl ${isPracticedToday ? 'text-gray-400' : 'text-gray-800'}`}>
       <div className="flex items-center space-x-2 justify-between" key={item.id}>
-        <div className="flex items-start space-x-4">
+        <div className="flex items-start space-x-4 ">
           <CheckCircleIcon
-            className={`w-8 h-8 cursor-pointer ${isPracticedToday ? 'text-green-500' : 'text-gray-400'}`}
+            className={`flex-shrink-0 h-6 w-6 md:w-7 md:h-7 lg:w-8 lg:h-8 cursor-pointer ${isPracticedToday ? 'text-green-500' : 'text-gray-400'}`}
             onClick={handlePractice}
           />
           <div>{item.sentence}</div>
         </div>
         <div className="flex items-center space-x-2">
-          <div
-            className="border rounded w-32 py-1 bg-white text-lg text-center text-gray-800">{item.practiceTimes}</div>
-          <div className="btn-secondary" onClick={handleDelete}>Delete</div>
+          <div className="border rounded w-12 py-1 bg-white text-center text-gray-800">{item.practiceTimes}</div>
+          <div className="w-20">
+            <div className="btn-secondary" onClick={handleDelete}>Delete</div>
+          </div>
           {/*<div className="btn-primary" onClick={handlePractice}>Practice</div>*/}
         </div>
       </div>

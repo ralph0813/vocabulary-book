@@ -32,3 +32,9 @@
         focus:outline-none focus:ring-brand-light focus:ring-brand-light sm:text-sm
     }
 }
+@supports (-webkit-touch-callout: none) {
+    /*noinspection CssInvalidPropertyValue*/
+    .min-h-screen-ios {
+        min-height: -webkit-fill-available;
+    }
+}
