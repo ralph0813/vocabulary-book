@@ -31,7 +31,7 @@ const WfdItem = (props: { item: SentenceInfo, dispatchDelSentence: (id: string) 
   return (
     <div className={`md:text-lg lg:text-2xl ${isPracticedToday ? 'text-gray-400' : 'text-gray-800'}`}>
       <div className="flex items-center space-x-2 justify-between" key={item.id}>
-        <div className="flex items-start space-x-4 ">
+        <div className="flex items-start space-x-4">
           <CheckCircleIcon
             className={`flex-shrink-0 h-6 w-6 md:w-7 md:h-7 lg:w-8 lg:h-8 cursor-pointer ${isPracticedToday ? 'text-green-500' : 'text-gray-400'}`}
             onClick={handlePractice}
