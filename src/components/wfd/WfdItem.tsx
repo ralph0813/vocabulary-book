@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { CheckCircleIcon } from '@heroicons/react/solid'
-import { listLastItem } from '../../util/util'
 
 export type SentenceInfo = {
   id: string
@@ -19,7 +18,7 @@ const WfdItem = (props: { item: SentenceInfo, dispatchDelSentence: (id: string) 
   } = props
 
   const handlePractice = () => {
-    if (listLastItem(item.practicedDate) !== new Date().toLocaleDateString()) {
+    if (!item.practicedToday) {
       dispatchPracSentence(item.id)
     }
   }

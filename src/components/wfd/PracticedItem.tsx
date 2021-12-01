@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { CheckCircleIcon } from '@heroicons/react/solid'
 import { SentenceInfo } from './WfdItem'
-import { listLastItem } from '../../util/util'
 
 const PracticedItem = (props: { item: SentenceInfo, dispatchDelSentence: (id: string) => void, dispatchPracSentence: (id: string) => void }): JSX.Element => {
   const {
@@ -12,7 +11,7 @@ const PracticedItem = (props: { item: SentenceInfo, dispatchDelSentence: (id: st
   // const [enlarge, setEnlarge] = React.useState(false)
 
   const handlePractice = () => {
-    if (listLastItem(item.practicedDate) !== new Date().toLocaleDateString()) {
+    if (!item.practicedToday) {
       dispatchPracSentence(item.id)
     }
   }
