@@ -4,6 +4,7 @@ import { CubeTransparentIcon } from '@heroicons/react/outline'
 import WfdItem, { SentenceInfo } from '../components/wfd/WfdItem'
 import AddSentence from '../components/wfd/AddSentence'
 import { listInitialState, listReducer } from '../reducers/sentenceReducer'
+import PracticedItem from '../components/wfd/PracticedItem'
 
 const WFD = (): JSX.Element => {
   const [sentenceInfoList, listDispatcher] = React.useReducer(listReducer, listInitialState)
@@ -50,7 +51,7 @@ const WFD = (): JSX.Element => {
         <div className="text-xl pb-2 font-bold text-gray-800">今日已练习：</div>
         <div className="space-y-2">
           {practicedTodayList?.length !== 0 ? practicedTodayList.map((item) => (
-            <WfdItem
+            <PracticedItem
               item={item} key={item.id}
               dispatchDelSentence={dispatchDelSentence}
               dispatchPracSentence={dispatchPracSentence}
