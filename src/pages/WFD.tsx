@@ -68,7 +68,7 @@ const WFD = (): JSX.Element => {
       <div className='border p-3 rounded shadow-sm'>
         <div className="text-xl pb-2 font-bold text-gray-800">所有句子：</div>
         <div className="space-y-2">
-          {sentenceInfoList?.length !== 0 ? sentenceInfoList.map((item) => (
+          {sentenceInfoList?.length !== 0 ? [...sentenceInfoList].reverse().map((item) => (
             <WfdItem
               item={item} key={item.id}
               dispatchDelSentence={dispatchDelSentence}
